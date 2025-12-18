@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(H)Arts Meta Ad Mockups v2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .ad-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .ad-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        /* Ad Card Styles - 1:1 ratio */
+        .ad-card {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Style variations */
+        .style-cream {
+            background: linear-gradient(145deg, #FAF7F2 0%, #E8E0D5 100%);
+            color: #2D2A26;
+        }
+        .style-dark {
+            background: linear-gradient(145deg, #2D2A26 0%, #1a1816 100%);
+            color: #FAF7F2;
+        }
+        .style-sage {
+            background: linear-gradient(145deg, #7D8471 0%, #5a6150 100%);
+            color: white;
+        }
+        .style-terra {
+            background: linear-gradient(145deg, #C4715B 0%, #9e5a48 100%);
+            color: white;
+        }
+        
+        /* Callout = WHO */
+        .callout {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+            opacity: 0.7;
+        }
+        .style-cream .callout { color: #7D8471; }
+        .style-dark .callout { color: #A8B09E; }
+        
+        /* Subhead = HOOK */
+        .subhead {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .style-cream .subhead { color: #2D2A26; }
+        
+        /* Benefits */
+        .benefits {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        .benefits li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            opacity: 0.9;
+        }
+        .benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .style-cream .benefits li::before { color: #C4715B; }
+        .style-dark .benefits li::before { color: #C4715B; }
+        .style-sage .benefits li::before { color: #FAF7F2; }
+        .style-terra .benefits li::before { color: #FAF7F2; }
+        
+        /* CTA */
+        .cta {
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            width: fit-content;
+        }
+        .style-cream .cta { background: #C4715B; color: white; }
+        .style-dark .cta { background: #C4715B; color: white; }
+        .style-sage .cta { background: #FAF7F2; color: #2D2A26; }
+        .style-terra .cta { background: #FAF7F2; color: #C4715B; }
+        
+        /* Decorative corner accent */
+        .ad-card::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        .style-cream::after {
+            background: #C4715B;
+            top: -40px;
+            right: -40px;
+        }
+        .style-dark::after {
+            background: #7D8471;
+            bottom: -40px;
+            left: -40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meta Ad Image Mockups — (H)Arts in Medicine</h1>
+    <p class="subtitle">Callout (WHO) → Subhead (HOOK) → Benefits (WHAT) → CTA (ACTION)</p>
+    
+    <div class="ad-grid">
+        
+        <!-- Ad 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Ad 1: CME Different (Cream)</div>
+            <div class="ad-card style-cream">
+                <div class="callout">Physicians!</div>
+                <div class="subhead">Want to use your CME differently?</div>
+                <ul class="benefits">
+                    <li>Combat burnout with evidence-based wellness</li>
+                    <li>Experience Santa Fe's world-class art scene</li>
+                    <li>Intimate retreat — only 25 accepted</li>
+                </ul>
+                <span class="cta">Only 25 spots → Learn More</span>
+            </div>
+        </div>
+        
+        <!-- Ad 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Ad 2: Burnout (Dark)</div>
+            <div class="ad-card style-dark">
+                <div class="callout">Burned Out Doctors:</div>
+                <div class="subhead">What if your CME actually restored you?</div>
+                <ul class="benefits">
+                    <li>Opera, spa, flamenco & fine dining</li>
+                    <li>Narrative medicine workshops</li>
+                    <li>12 AAFP-approved credits</li>
+                </ul>
+                <span class="cta">Reserve your spot →</span>
+            </div>
+        </div>
+        
+        <!-- Ad 3 -->
+        <div class="ad-container">
+            <div class="ad-label">Ad 3: Skip the Ballroom (Sage)</div>
+            <div class="ad-card style-sage">
+                <div class="callout">Physicians with CME to Burn</div>
+                <div class="subhead">Skip the standard hotel conference.</div>
+                <ul class="benefits">
+                    <li>3 days in Santa Fe's art capital</li>
+                    <li>Designed by physicians, for physicians — to combat burnout</li>
+                    <li>More retreat than requirement</li>
+                </ul>
+                <span class="cta">Only 25 spots — See the experience</span>
+            </div>
+        </div>
+        
+        <!-- Ad 4 -->
+        <div class="ad-container">
+            <div class="ad-label">Ad 4: CME to Use (Terra)</div>
+            <div class="ad-card style-terra">
+                <div class="callout">Clinicians!</div>
+                <div class="subhead">Got CME funds to use?</div>
+                <ul class="benefits">
+                    <li>Santa Fe Opera under the stars</li>
+                    <li>Japanese spa & sake pairing</li>
+                    <li>Evidence-based burnout recovery</li>
+                </ul>
+                <span class="cta">Early bird pricing → Learn More</span>
+            </div>
+        </div>
+        
+        <!-- Ad 5 -->
+        <div class="ad-container">
+            <div class="ad-label">Ad 5: Doesn't Feel Like Work (Cream)</div>
+            <div class="ad-card style-cream">
+                <div class="callout">Tired Physicians:</div>
+                <div class="subhead">Ready for CME that doesn't feel like work?</div>
+                <ul class="benefits">
+                    <li>World-famous Santa Fe art & culture</li>
+                    <li>Intimate group of 25 max</li>
+                    <li>Actually come back restored</li>
+                </ul>
+                <span class="cta">Spots are limited → Reserve now</span>
+            </div>
+        </div>
+        
+        <!-- Ad 6 -->
+        <div class="ad-container">
+            <div class="ad-label">Ad 6: Family Medicine (Dark)</div>
+            <div class="ad-card style-dark">
+                <div class="callout">Family Medicine Docs</div>
+                <div class="subhead">Your CME doesn't have to be boring.</div>
+                <ul class="benefits">
+                    <li>12 AAFP credits included</li>
+                    <li>Opera + flamenco + fine art</li>
+                    <li>Beautiful Santa Fe, August 2026</li>
+                </ul>
+                <span class="cta">Only 25 spots → Learn More</span>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
