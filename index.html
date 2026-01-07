@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5JP58PND');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physician (H)Arts & Wellness Conference | Santa Fe 2026</title>
@@ -153,7 +161,7 @@
                             <div class="step-indicator w-8 h-8 rounded-full bg-cream-dark flex items-center justify-center text-sm font-medium text-charcoal-light" data-step="3">3</div>
                         </div>
                         
-                        <form id="registrationForm">
+                        <form id="registrationForm" action="https://formspree.io/f/mvzgepeq" method="POST">
                             <!-- Step 1: Email -->
                             <div class="form-step active" data-step="1">
                                 <h2 class="font-display text-2xl text-center mb-2">Reserve Your Spot</h2>
@@ -447,9 +455,37 @@
         // Form submission
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would typically send data to your backend
-            // For now, redirect to their registration page
-            window.location.href = 'https://www.hart-med.com/harts-store-registration';
+
+            // Get form data
+            const formData = new FormData(this);
+
+            // Submit to Formspree
+            fetch('https://formspree.io/f/mvzgepeq', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Push generateLead event to dataLayer
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'generateLead',
+                        'formName': 'registrationForm',
+                        'package': formData.get('package'),
+                        'specialty': formData.get('specialty')
+                    });
+
+                    // Optionally redirect or show success message
+                    alert('Thank you for registering! We\'ll be in touch soon.');
+                } else {
+                    alert('There was an issue submitting your form. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Form submission error:', error);
+                alert('There was an issue submitting your form. Please try again.');
+            });
         });
     </script>
 </body>
